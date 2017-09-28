@@ -35,5 +35,7 @@
 		<button type="submit" class="btn btn-primary">Entrar</button>
 	</div>
 </form>
+
+<a href="{{ route('login') }}">Login Principal</a>
 </div>
 @endsection

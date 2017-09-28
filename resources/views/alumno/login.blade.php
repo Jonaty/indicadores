@@ -1,14 +1,25 @@
-@extends('admin.modulos.plantilla')
+@extends('modulos.plantilla')
 
 @section('title', 'Login')
 
 @section('contenido')
 
 <div class="col-md-6 col-md-offset-3">
+
+	@if (Session::has('info'))
+	<div class="alert alert-success">
+		{{ Session::get('info') }}
+	</div>
+
+	@elseif(Session::has('info2'))
+	<div class="alert alert-warning">
+		{{ Session::get('info2') }}
+	</div>
+	@endif
 	
 <h1>Login</h1>
 
-<form action="" method="POST">
+<form action="{{ route('datosLogin') }}" method="POST">
 	{!! csrf_field() !!}
 
 	<div class="form-group">

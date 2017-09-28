@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Auth;
 
+use App\Materia;
+
 class AdminController extends Controller
 {
 
@@ -44,6 +46,24 @@ class AdminController extends Controller
     	Auth::logout();
 
     	return redirect()->route('loginAdmin');
+    }
+
+    /*Paginas del administrador*/
+
+    public function registrarMaterias()
+    {
+    	return view('admin.registrarMaterias');
+    }
+
+    public function datosRegistrarMaterias(Request $request)
+    {
+    	Materia::create([
+    		'nom_materia' => $request->input('nom_materia'),
+    		'semestre' => $request->input('semestre'),
+    		'carrera' => $request->input('carrera')
+    	]);
+
+    	return redirect()->route('registrarMaterias')->with('info', 'Materia creada correctamente');
     }
 
 }
