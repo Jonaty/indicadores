@@ -4,7 +4,7 @@
 
 @section('contenido')
 
-<div class="col-md-6">
+<div class="col-md-8 col-md-offset-2">
 
 	@if (Session::has('info'))
 	<div class="alert alert-success">
@@ -12,7 +12,9 @@
 	</div>
 	@endif
 
-	<h1>Asignar materias Alumno</h1>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<h1 class="text-center">Asignar materias Alumno</h1>
 
 	<table class="table table-responsive table-hover table-bordered">
 		<thead>
@@ -35,11 +37,14 @@
 						</ul>
 					@endforeach
 				    </td>
-					<td><a class="btn btn-primary" href="{{ route('asignarMateriasForm', $alumno->id) }}" role="button">Link</a></td>
+					<td><a class="btn btn-primary" href="{{ route('asignarMateriasForm', $alumno->id) }}" role="button">Asignar</a></td>
 				</tr>
 			@endforeach
 		</tbody>
 	</table>
+		</div>
+	</div>
+
 </div>
 
 @endsection

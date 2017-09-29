@@ -6,7 +6,9 @@
 
 <div class="col-md-6 col-md-offset-3">
 	
-<h1>Registro</h1>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<h1 class="text-center">Registro Alumno</h1>
 
 <form action="{{ route('datosRegistro') }}" method="POST">
 	{!! csrf_field() !!}
@@ -53,10 +55,13 @@
 	<input type="hidden" name="rol" value="2">
 
 	<div class="form-group">
-		<button type="submit" class="btn btn-primary">Entrar</button>
+		<button type="submit" class="btn btn-primary btn-block">Entrar</button>
 	</div>
 </form>
 
 <a href="{{ route('login') }}">Atrás</a>
+		</div>
+	</div>
+
 </div>
 @endsection

@@ -5,7 +5,10 @@
 @section('contenido')
 
 <div class="col-md-6">
-	<h1>Asignar Calificación</h1>
+
+	<div class="panel panel-default">
+  <div class="panel-body">
+   <h1>Asignar Calificación</h1>
 
 	<form action="{{ route('datosAsignarCalificacion') }}" method="POST">
 		{!! csrf_field() !!}
@@ -38,6 +41,9 @@
 
 		 <button type="submit" class="btn btn-default">Asignar</button>
 	</form>
+  </div>
+</div>
+
 </div>
 
 @endsection

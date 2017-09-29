@@ -15,8 +15,11 @@
 		{{ Session::get('info2') }}
 	</div>
 	@endif
-
-<h1>Login Admin</h1>
+<br>
+<br>
+	<div class="panel panel-default">
+  <div class="panel-body">
+    <h1 class="text-center">Login Admin</h1>
 
 <form action="{{ route('datosLoginAdmin') }}" method="POST">
 	{!! csrf_field() !!}
@@ -32,10 +35,14 @@
 	</div>
 
 	<div class="form-group">
-		<button type="submit" class="btn btn-primary">Entrar</button>
+		<button type="submit" class="btn btn-primary btn-block">Entrar</button>
 	</div>
 </form>
 
 <a href="{{ route('login') }}">Login Principal</a>
+  </div>
+</div>
+
+
 </div>
 @endsection

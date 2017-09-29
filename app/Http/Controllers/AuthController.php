@@ -25,8 +25,6 @@ class AuthController extends Controller
 
         $final = Materia::pluck('final');
 
-       /* dd($final);*/
-
 		return view('alumno.homeAlumno', compact('alumnos', 'materias', 'final'));
 	}
 

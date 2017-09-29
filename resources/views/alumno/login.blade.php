@@ -16,8 +16,10 @@
 		{{ Session::get('info2') }}
 	</div>
 	@endif
-	
-<h1>Login</h1>
+
+	<div class="panel panel-default">
+  <div class="panel-body">
+   <h1 class="text-center">Login Alumno</h1>
 
 <form action="{{ route('datosLogin') }}" method="POST">
 	{!! csrf_field() !!}
@@ -33,14 +35,16 @@
 	</div>
 
 	<div class="form-group">
-		<button type="submit" class="btn btn-primary">Entrar</button>
+		<button type="submit" class="btn btn-primary btn-block">Entrar</button>
 	</div>
 
 	<a href="{{ route('loginAdmin') }}">Login Admin</a>
 	<br>
-	<a href="{{ route('loginDocente') }}">Login Docente</a>
-     <br>
+{{-- 	<a href="{{ route('loginDocente') }}">Login Docente</a> --}}
 	<a href="{{ route('registro') }}">Registrate</a>
 </form>
+  </div>
+</div>
+	
 </div>
 @endsection

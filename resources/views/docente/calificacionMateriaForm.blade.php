@@ -6,7 +6,9 @@
 
 <div class="col-md-6 col-md-offset-3">
 	
-<h3>{{ $materia->nom_materia }}</h3>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<h3>{{ $materia->nom_materia }}</h3>
 
 <form action="{{ route('datosAsignarCalificacion', $materia->id) }}" method="POST">
 		{!! csrf_field() !!}
@@ -30,8 +32,10 @@
 			<input type="text" name="p3" class="form-control">
 		</div>
 
-		 <button type="submit" class="btn btn-default">Asignar</button>
+		 <button type="submit" class="btn btn-primary btn-block">Asignar</button>
 	</form>
+		</div>
+	</div>
 </div>
 
 @endsection
