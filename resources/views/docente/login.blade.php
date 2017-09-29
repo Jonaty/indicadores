@@ -1,4 +1,4 @@
-@extends('modulos.plantilla')
+@extends('docente.modulos.plantilla')
 
 @section('title', 'Login')
 
@@ -10,16 +10,11 @@
 	<div class="alert alert-success">
 		{{ Session::get('info') }}
 	</div>
-
-	@elseif(Session::has('info2'))
-	<div class="alert alert-warning">
-		{{ Session::get('info2') }}
-	</div>
 	@endif
 	
-<h1>Login</h1>
+<h1>Login Docente</h1>
 
-<form action="{{ route('datosLogin') }}" method="POST">
+<form action="{{ route('datosLoginDocente') }}" method="POST">
 	{!! csrf_field() !!}
 
 	<div class="form-group">
@@ -36,11 +31,9 @@
 		<button type="submit" class="btn btn-primary">Entrar</button>
 	</div>
 
-	<a href="{{ route('loginAdmin') }}">Login Admin</a>
+	<a href="{{ route('registroDocente') }}">Registro Docente</a>
 	<br>
-	<a href="{{ route('loginDocente') }}">Login Docente</a>
-     <br>
-	<a href="{{ route('registro') }}">Registrate</a>
+	<a href="{{ route('login') }}">Atrás</a>
 </form>
 </div>
 @endsection

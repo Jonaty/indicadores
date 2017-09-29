@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+     public function materias()
+    {
+        return $this->belongsToMany(Materia::class);
+    }
+
+/*    public function getMateriasAttribute()
+    {
+        return $this->manyMaterias()->pluck('user_id')->toArray();
+    }*/
 }

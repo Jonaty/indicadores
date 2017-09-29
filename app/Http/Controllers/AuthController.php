@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\User;
 
+use App\Materia;
+
 use Auth;
 
 class AuthController extends Controller
@@ -15,9 +17,17 @@ class AuthController extends Controller
     {
        $this->middleware('auth', ['except' => ['login', 'datosLogin', 'registro', 'datosRegistro']]);
     }
+    
 	public function homeAlumno()
 	{
-		return view('alumno.homeAlumno');
+        $alumnos = User::where('rol', 2)->get();
+        $materias = Materia::all();
+
+        $final = Materia::pluck('final');
+
+       /* dd($final);*/
+
+		return view('alumno.homeAlumno', compact('alumnos', 'materias', 'final'));
 	}
 
     public function login()

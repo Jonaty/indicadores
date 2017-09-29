@@ -15,6 +15,13 @@ class CreateMateriaUserTable extends Migration
     {
         Schema::create('materia_user', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->integer('user_id')->unsigned();
+            $table->integer('materia_id')->unsigned();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('materia_id')->references('id')->on('materias')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
